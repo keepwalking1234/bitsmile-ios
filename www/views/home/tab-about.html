@@ -1,0 +1,31 @@
+<ion-view view-title="{{Lang.About[activeLang.name]}}" hide-back-button="true">
+	<ion-nav-bar class="bar-royal">
+	<ion-nav-buttons side="left">
+		<button class="button icon ion-android-cancel" ui-sref="tabs.home"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+        <button class="button icon ion-ios-gear" ui-sref="options"></button>
+		</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content class="bg-bitsmile512">
+		<div class="card bg1">
+			<div class="item item-text-wrap">				
+				<div class="row">
+					<div class="col">
+					<center>
+					<p>
+					<img src="img/shell-basic.png" style="width:256px;">
+					</p>
+					<p>
+					{{Lang.ShellCopyright[activeLang.name]}}
+					</p>
+                    <p>
+                    {{Lang.WalletVer[activeLang.name]}}&nbsp;{{ walletVersion }}
+                    </p>
+					</center>							
+					</div>
+				</div>
+            </div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,44 @@
+<ion-modal-view>
+	<ion-header-bar align-title="left" class="bar-royal fix-buttons">
+		<div class="buttons">
+			<button class="button icon ion-android-cancel" ng-click="closeDialog('modalTxDetails')"></button>
+		</div>
+		<h1 class="title">{{Lang.TxDetails[activeLang.name]}}</h1>
+	</ion-header-bar>
+	<ion-content has-bouncing="true" class="bg-bitsmile512">
+		<div class="list card bg1">
+			<div class="item item-avatar bg3">
+				<img ng-src="img/icons/trans-{{ currentTx.category }}.png">
+				<h2>
+					{{ currentTx.amount | number:6 }} {{currencyCode}}
+				</h2>
+				<p>
+					{{currentTx.time * 1000 | date:'dd-MM-yyyy HH:ss'}}
+				</p>
+			</div>
+			<div class="item item-body bg3">
+				<p>
+					<strong>txid</strong>: {{ currentTx.txid }}
+				</p>
+			</div>
+
+			<div class="item tabs tabs-secondary tabs-icon-left bg3">
+                <a class="tab-item" href="#" ng-click="copyAddress(currentTx.txid)">
+                    <i class="icon ion-ios-copy">
+                    </i>
+                    {{Lang.Copy[activeLang.name]}}
+                </a>
+				<!--<a class="tab-item" href="#">
+					<i class="icon ion-grid">
+					</i>
+					{{ currentTx.category=='receive'?Lang.TxReceive[activeLang.name]:Lang.TxSend[activeLang.name]}}
+				</a>-->
+				<a class="tab-item" href="#">
+					<i class="icon ion-android-checkmark-circle bg3">
+					</i>
+					{{Lang.TxConfirmations[activeLang.name]}}: {{ currentTx.confirmations }}
+				</a>
+			</div>
+		</div>
+	</ion-content>
+</ion-modal-view>

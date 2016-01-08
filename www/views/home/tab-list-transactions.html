@@ -1,0 +1,41 @@
+<ion-view view-title="{{Lang.Transactions[activeLang.name]}}">
+
+	<ion-nav-buttons side="left">
+		<button class="button icon ion-log-out" ng-click="bitsmileLogout()"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<button class="button icon ion-ios-paperplane" ng-click="transfer.openDialog()"></button>
+        <button class="button icon ion-ios-gear" ui-sref="options"></button>
+	</ion-nav-buttons>
+
+
+	<ion-header-bar class="bar bar-stable bar-subheader">
+		<div class="row">
+			<div class="col">
+				{{ wallet_balance }} {{currencyCode}}
+			</div>
+			<div class="col text-right">
+				{{Lang.TxCount[activeLang.name]}}: {{ transactions.length }}
+			</div>
+		</div>
+
+	</ion-header-bar>
+	<ion-content class="padding bg-bitsmile512">       
+            <ion-refresher on-refresh="refreshTransactions()" pulling-text="Pull to refresh">
+            </ion-refresher>
+         <div class="card bg1">
+            <div ng-show="isEmpty"><center><h2>{{Lang.NoTx[activeLang.name]}}</h2></center></div>
+            <ion-list>
+                <ion-item class="item item-avatar bg3" ng-repeat="tx in transactions | orderBy:'-time'" ng-click="showDetails(tx)">
+                    <img ng-src="img/icons/trans-{{ tx.category }}.png">
+                    <h2>
+                        {{ tx.amount | number:6 }} {{currencyCode}}
+                    </h2>
+                    <p>
+                        {{tx.time * 1000 | date:'dd-MM-yyyy HH:ss'}} / {{Lang.TxConfirmations[activeLang.name]}}:{{ tx.confirmations }}
+                    </p>
+                </ion-item>
+            </ion-list>
+        </div>
+</ion-content>
+</ion-view>

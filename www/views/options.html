@@ -1,0 +1,78 @@
+<ion-view view-title="{{Lang.Options[activeLang.name]}}" hide-back-button="true">
+	<ion-nav-bar class="bar-royal">
+	<ion-nav-buttons side="left">
+		<button class="button icon ion-android-cancel" ng-click="closeMe()">
+		</button>
+	</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content overflow-scroll="true">
+		<div class='content padding bg-bitsmile512'>
+		    <div class="card bg1">
+				<div class="item item-divider bg4">
+					{{Lang.Language[activeLang.name]}}
+				</div>
+				<div class="row">
+				<div ng-repeat="(langId, langSel) in langArr" style="float:left;">
+					<div ng-if="langSel.name==activeLang.name">
+           				 <button class="button button-small button-royal" style="padding:3px;margin:5px" ng-click="switchLang(langId)">{{langSel.caption}}</button>
+           			</div>	 
+           			<div ng-if="langSel.name!=activeLang.name">
+           				 <button class="button button-small button-outline button-royal" style="padding:3px;margin:5px" ng-click="switchLang(langId)">{{langSel.caption}}</button>
+           			</div>	 
+				</div>
+				</div>
+			</div>
+			<div class="card bg1">
+				<div class="item item-divider bg4">
+					{{Lang.MyAddress[activeLang.name]}}
+				</div>
+				<div class="item item-text-wrap bg3">
+					<div class="row center">
+						<div style="width: 90%;text-align:center; font-size: 22px;line-height:110%;">{{userData.address}}</div>
+                    </div>
+                    <div class="row center">
+                        <a style="margin:5px;" class="pull-right button icon-left ion-ios-copy-outline button-clear button-small" ng-click="copyAddress()">{{Lang.Copy[activeLang.name]}}</a>
+                    </div>
+					<div class="row qr center">
+						<qr text="userData.address" size="150" image="true">
+						</qr>
+					</div>
+				</div>
+			</div>	
+			<div class="card bg1">
+				<div class="item item-divider bg4">
+					{{Lang.PrivateKey[activeLang.name]}} 
+				</div>
+				<div class="item item-text-wrap bg3">
+                    <div class="row center" ng-show="showPrivKey">
+                        <div style="width: 90%; font-size: 22px;text-align:center;line-height:110%;">{{userData.key}}</div>                                
+                    </div>
+                    <div class="row center" ng-show="showPrivKey">        
+                        <div class="col center">
+                            <a style="margin:5px;" class="pull-right button icon-left ion-ios-copy-outline button-clear button-small" ng-click="copyKey()">{{Lang.Copy[activeLang.name]}}</a>
+                        </div>
+                        <div class="col center">
+                            <button style="margin:5px;" ng-show="showPrivKey" class="button button-small button-outline button-royal" ng-click="hideMe()">{{Lang.Hide[activeLang.name]}}</button>
+                        </div>
+                    </div>
+                    <div class="row qr center" ng-show="showPrivKey">
+                        <qr text="userData.key" size="150" image="true">
+                        </qr>
+                    </div>
+                    <div class="row center" ng-show="!showPrivKey">
+                        <label class="item item-input" style="text-align:center;">
+                            {{Lang.EnterPatternView[activeLang.name]}}
+                        </label>
+                    </div>
+                    <div class="row center" ng-show="!showPrivKey">
+                        <label class="item item-input center pattern bg3">
+                           <div id="patternContainerSmall">
+                           </div>
+                        </label>
+                    </div>	
+				</div>
+			</div>			
+		</div>
+	</ion-content>
+	
+</ion-view>

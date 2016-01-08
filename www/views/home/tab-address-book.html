@@ -1,0 +1,65 @@
+<ion-view view-title="{{Lang.AddressBook[activeLang.name]}}">
+	<ion-nav-buttons side="left">
+		<button class="button icon ion-log-out" ng-click="bitsmileLogout()"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+        <button class="button icon ion-android-create" ng-click="newAddress()"></button>
+        <button class="button icon ion-ios-gear" ui-sref="options"></button>	
+	</ion-nav-buttons>
+
+	<ion-content class="padding bg-bitsmile512">				
+			<div ng-show="isEmpty" class="bg2"><center><h2>{{Lang.ABNoEntry[activeLang.name]}}</h2></center></div>
+		<p>	
+			<button class="button button-block button-royal" ng-click="newAddress()">
+			{{Lang.AddEntry[activeLang.name]}}	
+			</button>
+		</p>
+		<ion-list class="address-book bg3">
+			<ion-item ng-repeat="item in addressbookList" class="bg3" style="padding:0px;margin:0px;border:0px;">
+				<div class="card bg1">
+					<div class="item bg4">
+						<!--<img ng-src="img/icons/trans-{{ tx.category }}.png">-->
+						<h2>
+							{{ item.title }}
+						</h2>
+					</div>
+					<div class="item item-text-wrap bg3">
+                        <div class="row">
+                            <div class="col col-75 left">
+                                <div style="text-align:center;width: 100%; margin-left:5px;font-size: 18px;margin-top:5px;line-height:110%;">
+                                    {{ item.address }}
+                                </div>
+                            </div>
+                            <div class="col col-25 qr right">
+                                <qr text="item.address" size="65" image="true">
+                                </qr>
+                            </div>                            
+                        </div>
+                    </div>
+					<div class="item tabs tabs-secondary tabs-icon-left bg3">
+						<a class="tab-item" href="#" ng-click="editAddress($index)">
+							<i class="icon ion-edit">
+							</i>
+							{{Lang.Edit[activeLang.name]}}
+						</a>
+                        <a class="tab-item" href="#" ng-click="copyAddress(item.address)">
+                            <i class="icon ion-ios-copy">
+                            </i>
+                            {{Lang.Copy[activeLang.name]}}
+                        </a>
+						<a class="tab-item" href="#" ng-click="transfer.openDialog(item.address)">
+							<i class="icon ion-android-send">
+							</i>
+							{{Lang.SendCoins[activeLang.name]}}
+						</a>
+						<a class="tab-item" href="#" ng-click="addressbookDelete($index)">
+							<i class="icon ion-android-delete">
+							</i>
+							{{Lang.Delete[activeLang.name]}}
+						</a>
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,82 @@
+<ion-view view-title="{{Lang.Home[activeLang.name]}}">
+<ion-nav-bar class="bar-royal">
+	<ion-nav-buttons side="left">
+        <button class="button icon ion-log-out" ng-click="bitsmileLogout()"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<button class="button icon ion-ios-information" ui-sref="about"></button>
+        <button class="button icon ion-ios-gear" ui-sref="options"></button>
+	</ion-nav-buttons>
+</ion-nav-bar>
+	<ion-content class="padding bg-bitsmile512">
+		<ion-refresher on-refresh="refreshInfo()">
+		</ion-refresher>
+		<div class="card bg1">
+			<div class="item item-divider bg4">
+				{{Lang.Address[activeLang.name]}}
+			</div>
+			<div class="item item-text-wrap bg3">
+                <div class="row qr center bg3">                   
+                    <div class="col col-75 qr right bg3">
+                        <div style="text-align:center;width: 100%; margin-left:5px;font-size: 22px;margin-top:5px;line-height:110%;">{{wallet.account.address}}</div>
+                    </div>
+                    <div class="col col-25 left bg3">
+                        <qr text="qr_address" size="65" image="true">
+                        </qr>
+                    </div> 
+               </div>
+               <div class="row center">
+                    <a class="button icon-left ion-ios-copy-outline button-clear button-small" ng-click="copyAddress()">{{Lang.Copy[activeLang.name]}}</a>
+                </div>      
+				<div class="item item-divider bg4">
+					{{Lang.Balance[activeLang.name]}}: {{ wallet.account.balance }} {{currencyCode}}
+				</div>
+			</div>
+            <div class="item item-text-wrap bg3">
+                <button class="button button-block button-royal icon ion-ios-paperplane" ng-click="transfer.openDialog()">
+                    {{Lang.SendCoins[activeLang.name]}}
+                </button>
+            </div>
+		</div>
+		<div class="card bg2">
+			<div class="item item-divider bg4">
+				{{Lang.Status[activeLang.name]}}
+			</div>
+			<div class="item item-text-wrap bg3">
+				<div class="row">
+					<div class="col col-50">
+						{{Lang.WalletVer[activeLang.name]}}
+					</div>
+					<div class="col">
+						{{ walletVersion }}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-50">
+						{{Lang.Status[activeLang.name]}}
+					</div>
+					<div class="col">
+						<span ng-show="online">{{Lang.Online[activeLang.name]}}</span>
+						<span ng-show="!online">{{Lang.Offline[activeLang.name]}}</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-50">
+						{{Lang.Blocks[activeLang.name]}}
+					</div>
+					<div class="col">
+						{{ wallet.info.blocks }}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-50">
+						{{Lang.MinFee[activeLang.name]}}
+					</div>
+					<div class="col">
+						{{ wallet.info.paytxfee }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

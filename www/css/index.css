@@ -1,0 +1,316 @@
+body {
+    cursor: url('../img/finger_invert.png'), auto;
+    zoom: 72%;
+}
+@media only screen and (min-height : 854px) {
+    body{
+        zoom: 100%;
+    }   
+}
+@media only screen and (min-height : 1024px) {
+    body{
+        zoom: 125%;
+    }   
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body{
+        zoom: 100%;
+    }  
+}
+.modal{
+  top: 0 ;
+  bottom: 0 ; 
+  left: 0 ;
+  right: 0 ;
+  width: 100% ;
+}
+
+.icon-bitsmile {
+    background-image: url('../img/icons/novacoin-32.png');
+    background-repeat: no-repeat;
+    border: 0;
+    width: 37px;
+    height: 34px;
+}
+.bg1{
+    background-color:rgba(255, 255, 255, 0.9);
+    font-weight:bold;
+    font-size:16px;
+    border-radius: 25px;
+    border:1px solid;
+    color:#8a6de9;
+}
+.bg2{
+    background-color:rgba(255, 255, 255, 0.9);
+    font-weight:normal;
+    font-size:16px;
+    border-radius: 25px;
+    border:1px solid;
+    color:#8a6de9;
+}
+.bg3{
+    background-color:rgba(255, 255, 255, 0);
+}
+.bg4{
+    background-color:rgba(138, 109, 233, 0.5);
+}
+.center {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+  line-height: 1.5em;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  line-height: 1.5em;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  line-height: 1.5em;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  line-height: 1.5em;
+}
+.view {
+    background: url('../img/background.jpg') no-repeat;
+    background-size: 100% auto;
+}
+
+.card img {
+    width: 100%;
+}
+
+/* PATTERN HOLDER */
+.patt-holder {
+    background-color:rgba(255, 255, 255, 0);
+    -ms-touch-action: none;
+}
+
+.patt-circ {
+    background-color:rgba(138, 109, 233, 0.9);
+    border: 1px solid #ddd;
+}
+
+.patt-lines {
+    background-color:rgba(221, 221, 221, 0.8);
+}
+
+.pattern {
+    padding-right: 15px;
+}
+
+.qr img {
+    width: auto;
+}
+
+.address-book .item {
+    padding: 8px;
+}
+
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+    opacity: 1;
+    color: rgb(00,79,153);
+}
+
+.tab-item.activated {
+    color: rgb(00,79,153);
+}
+
+.col .input {
+    margin-top: 7px;
+}
+
+.bg-bitsmile128 {
+    background: url(../img/icons/novacoin-128.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.bg-bitsmile512 {
+    background: url(../img/icons/novacoin-bg-512-opacity.png) repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.ion-ios-people:before {
+    color: #8a6de9;
+}
+
+.ion-ios-people-outline:before {
+    color: #8a6de9;
+}
+
+.ion-information:before {
+    color: #8a6de9;
+}
+
+.ion-information-circled:before {
+    color: #8a6de9;
+}
+
+.ion-ios-book:before {
+    color: #8a6de9;
+}
+
+.ion-ios-book-outline:before {
+    color: #8a6de9;
+}
+
+.ion-ios-gear:before {
+    color: #ffffff;
+}
+
+.ion-ios-gear-outline:before {
+    color: #8a6de9;
+}
+
+.ion-ios-home:before {
+    color: #8a6de9;
+}
+
+.ion-ios-home-outline:before {
+    color: #8a6de9;
+}
+
+.ion-ios-list:before {
+    color: #8a6de9;
+}
+
+.ion-ios-list-outline:before {
+    color: #8a6de9;
+}
+.ion-person-add:before {
+    color: #8a6de9;
+}
+.ion-cash:before {
+    color: #8a6de9;
+}
+.ion-ios-telephone:before {
+    color: #8a6de9;
+}
+.ion-ios-medical:before {
+    color: #8a6de9;
+}
+.ion-chevron-left:before {
+    color: #8a6de9;
+}
+.ion-iphone:before {
+    color: #8a6de9;
+}
+.ion-qr-scanner:before {
+    color: #8a6de9;
+}
+.ion-ios-book:before {
+    color: #8a6de9;
+}
+.ion-ios-copy-outline{
+    color: #8a6de9;
+}
+.error-container {
+    margin: 5px 0;
+}
+
+    .error-container:last-child {
+        margin: 5px 0 0;
+    }
+
+.error {
+    padding: 10px 16px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #555;
+    vertical-align: middle;
+}
+
+    .error i {
+        font-size: 24px;
+        color: #B83E2C;
+        vertical-align: middle;
+    }
+
+.last-error-container > .error {
+    padding: 10px 16px 0;
+}
+
+.has-errors {
+    border-bottom: 3px solid #B83E2C;
+}
+
+.no-errors {
+    border-bottom: 3px solid green;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content {
+border-color: #ccc;
+background-color: #11c1f3;
+}
+/**
+ * ion-footer-bar custom styles
+ */
+.footer-bar-custom {
+    background: #455D87;
+    color: #F6F7F0;
+    height: 44px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z-index: 5;
+}
+
+.footer-bar-custom .item-left,
+.footer-bar-custom .item-center,
+.footer-bar-custom .item-right {
+   position: absolute;
+}
+
+.footer-bar-custom .item-left {
+  left: 10px;
+}
+
+.footer-bar-custom .item-center {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.footer-bar-custom .item-right {
+  right: 10px;
+}

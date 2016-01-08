@@ -1,0 +1,65 @@
+<ion-view view-title="{{appTitle}}" hide-back-button="true">
+	<ion-nav-bar class="bar-royal">
+	<ion-nav-buttons side="left">
+		<button class="button icon ion-log-out" ng-click="bitsmileLogout()">
+		</button>
+	</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content overflow-scroll="true" class="bg-bitsmile512">
+		<div class='content padding'>
+			<div ng-show="!isInit">
+				<center>
+				<p>
+					<img src="img/shell-basic.png">
+				</p>
+				<p "bg1">
+					{{Lang.WelcomeMsg[activeLang.name]}}
+				</p>	
+				</center>
+				<form name="registerForm">
+				</form>
+			</div>
+			<div class="row">
+				<div class="col" ng-show="isInit">
+				<center>
+				<p>
+					<img src="img/shell-basic.png">
+				</p>
+				<p class="bg1">
+					{{Lang.WelcomeMsg[activeLang.name]}}
+				</p>	
+				</center>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col" ng-show="!isInit">
+					<label class="item item-input center bg2">
+						{{Lang.SetPattern[activeLang.name]}}
+					</label>
+				</div>
+				<div class="col" ng-show="isInit">
+					<label class="item item-input center bg2">
+						{{Lang.EnterPattern[activeLang.name]}}
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col" ng-click="clearMe()">
+					<label class="item item-input center pattern bg1">
+						<div id="patternContainer">
+						</div>
+					</label>
+				</div>
+			</div>
+
+			<div class="row" ng-show="!isInit">
+				<div class="col">
+					<button class="button button-block button-royal" ng-click="registerMe()" ng-disabled="patternBtn">
+						{{Lang.Save[activeLang.name]}}
+					</button>
+				</div>
+			</div>
+
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,49 @@
+<ion-modal-view>
+<form name="addressbookForm">
+		<ion-header-bar align-title="left" class="bar-royal fix-buttons">
+			<div class="buttons">
+				<button class="button icon ion-android-cancel" ng-click="closeDialog('modalAddresItem')"></button>
+			</div>
+			<h1 class="title">{{ abTitle }}</h1>
+		</ion-header-bar>
+		
+		
+		<ion-content has-bouncing="true" class="bg-bitsmile512">
+            <div class="card bg1">
+                <div class="item item-divider bg4">
+                    {{ abTitle }}
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="item item-input item-floating-label" style="border:1px solid #8a6de9;">
+                            <input style="font-weight:bold;" type="text" placeholder="{{Lang.Address[activeLang.name]}}" required ng-model="addressbookData.address" id="addyAddy">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="button button-block button-stable icon ion-qr-scanner" ng-click="qrScan()">
+                            {{Lang.ScanQR[activeLang.name]}}
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label class="item item-input item-floating-label" style="border:1px solid #8a6de9;">
+                            <input style="font-weight:bold;" type="text" placeholder="{{Lang.Name[activeLang.name]}}" required ng-model="addressbookData.title" id="addyName">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <button class="button button-block button-royal" ng-click="addressbookUpdate(addressbookData.id)" ng-disabled="addressbookForm.$invalid">
+                            {{Lang.SaveContact[activeLang.name]}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+</ion-content>		
+</form>
+</ion-modal-view>

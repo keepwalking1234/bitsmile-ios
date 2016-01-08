@@ -1,0 +1,22 @@
+<ion-view view-title="{{appTitle}}" hide-back-button="true">
+    <ion-nav-bar class="bar-royal">
+    </ion-nav-bar>
+
+    <ion-tabs class="tabs-light tabs-icon-left">
+
+        <ion-tab title="{{Lang.Account[activeLang.name]}}" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" ui-sref="tabs.home">
+            <ion-nav-view name="home-tab">
+            </ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="{{Lang.Transactions[activeLang.name]}}" icon-on="ion-ios-list" icon-off="ion-ios-list-outline" ui-sref="tabs.transactions">
+            <ion-nav-view name="transactions-tab">
+            </ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="{{Lang.AddressBook[activeLang.name]}}" icon-on="ion-ios-book" icon-off="ion-ios-book-outline" ui-sref="tabs.addressbook">
+            <ion-nav-view name="addressbook-tab">
+            </ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

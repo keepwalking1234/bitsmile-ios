@@ -1,0 +1,51 @@
+<ion-modal-view>
+<form name="sendToForm">
+		<ion-header-bar align-title="left" class="bar-royal fix-buttons">
+			<div class="buttons">
+				<button class="button icon ion-android-cancel" ng-click="transfer.closeDialog()"></button>
+			</div>
+			<h1 class="title">{{Lang.TxNew[activeLang.name]}}</h1>
+		</ion-header-bar>
+		<ion-content has-bouncing="true" scroll="false" class="bg-bitsmile512">
+            <div class="card bg1">
+                <div class="item item-divider bg4">
+                    {{Lang.TxNew[activeLang.name]}}
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="item item-input item-floating-label" style="border:1px solid #8a6de9;">
+                            <input style="font-weight:bold;" type="text" placeholder="{{Lang.Address[activeLang.name]}}" required ng-model="transfer.data.address" id="selAddy">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="button button-small button-block button-stable icon ion-qr-scanner" ng-click="qrScan()">
+                            {{Lang.ScanQR[activeLang.name]}}
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="button button-small button-block button-stable icon ion-ios-book" ng-click="selectFromAddressBook()">
+                            {{Lang.AddressBook[activeLang.name]}}
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="item item-input item-floating-label" style="border:1px solid #8a6de9;">
+                            <input style="font-weight:bold;" name="selAmtName" type="number" placeholder="{{Lang.TxAmount[activeLang.name]}}" required ng-model="transfer.data.amount" id="selAmt">
+                        </label>
+                    </div>
+                </div>
+                <select mobi-select=true ng-options="item.address as item.title for item in addressbookList" ng-model="transfer.data.address" id="selectFromAddressBook"></select>
+                <div class="row">
+                    <div class="col">
+                        <button class="button button-block button-royal" ng-click="transfer.sendTo2()" ng-disabled="sendToForm.$invalid">
+                            {{Lang.TxSend[activeLang.name]}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+</ion-content>
+</form>
+</ion-modal-view>
